@@ -2,7 +2,11 @@
   <div class="lg:w-1/2 md:container sm:container mx-auto m-10 p-10 bg-gray-200">
     <div v-if="inputError" class="rounded bg-red-200 text-red-900 font-semibold p-2 text-center ">გთხოვთ შეიყვანოთ სიის ელემენტი</div>
     <h1 class="my-8 font-black text-3xl uppercase case-on">TODO აპლიკაცია</h1>
-    <TextInput v-model="inputValue" />
+    <div class="flex flex-col bg-gray-100 p-5 space-y-4 shadow mb-10">
+      <label for="name" class="case-on">შეიყვანეთ სიის ელემენტი</label>
+      <TextInput v-model="inputValue" />
+      <button class="h-11 bg-gray-300 rounded" v-on:click="addValue">დამატება</button>
+      </div>
     <div class="flex flex-col">
       <h1 class="text-3xl border-light-blue-800 border-b-4 mb-5">TODO List</h1>
       <ul class="space-y-3">
