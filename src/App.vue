@@ -1,9 +1,11 @@
 <template>
   <div class="lg:w-1/2 md:container sm:container mx-auto m-10 p-10 bg-gray-200">
     <div v-if="inputError" class="rounded bg-red-200 text-red-900 font-semibold p-2 text-center ">გთხოვთ შეიყვანოთ სიის ელემენტი</div>
-    <Logo />
-    <h1 class="my-8 font-black text-3xl uppercase case-on">TODO აპლიკაცია</h1>
-    <div class="flex flex-col bg-gray-100 p-5 space-y-4 shadow mb-10">
+      <div class="flex justify-center items-center">
+        <Logo class="mr-4" />
+        <h1 class="my-8 font-black text-3xl uppercase case-on">TODO აპლიკაცია</h1>
+      </div>
+      <div class="flex flex-col bg-gray-100 p-5 space-y-4 shadow mb-10">
       <label for="name" class="case-on">შეიყვანეთ სიის ელემენტი</label>
       <TextInput v-model="inputValue" />
       <button class="h-11 bg-gray-300 rounded" v-on:click="addValue">დამატება</button>
