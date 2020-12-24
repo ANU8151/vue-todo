@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "HelveticaNeueLTGEO-55Roman";
+  /*font-display: swap;*/
+  src: url("./assets/HelveticaNeueLTGEO-55Roman.woff") format('woff');
+}
+
+#app {
+  font-family:"HelveticaNeueLTGEO-55Roman" ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+.case-on{
+  font-feature-settings: 'case' on;
+}
