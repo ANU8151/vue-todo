@@ -1,6 +1,7 @@
 <template>
   <div class="lg:w-1/2 md:container sm:container mx-auto m-10 p-10 bg-gray-200">
     <div v-if="inputError" class="rounded bg-red-200 text-red-900 font-semibold p-2 text-center ">გთხოვთ შეიყვანოთ სიის ელემენტი</div>
+    <Logo />
     <h1 class="my-8 font-black text-3xl uppercase case-on">TODO აპლიკაცია</h1>
     <div class="flex flex-col bg-gray-100 p-5 space-y-4 shadow mb-10">
       <label for="name" class="case-on">შეიყვანეთ სიის ელემენტი</label>
@@ -21,12 +22,14 @@
 <script>
 import TodoItem from './components/TodoItem.vue'
 import TextInput from './components/TextInput.vue'
+import Logo from './components/Logo.vue'
 
 export default {
   name: 'App',
   components: {
     TodoItem,
-    TextInput
+    TextInput,
+    Logo
   },
   data() {
     return {
