@@ -13,8 +13,8 @@
     <div class="flex flex-col">
       <h1 class="text-3xl border-light-blue-800 border-b-4 mb-5">TODO List</h1>
       <ul class="space-y-3">
-        <li v-for="el in valueList" :key="el.id" class="flex justify-between items-center text-medium font-normal h-10 rounded-lg px-2 bg-gray-100 shadow">
-          <TodoItem :todo="el" />
+        <li v-for="(el, index)  in valueList" :key="el.id" class="flex justify-between items-center text-medium font-normal h-10 rounded-lg px-2 bg-gray-100 shadow">
+          <TodoItem :todo="el"  @deleteTodo="deleteTodo(index)"/>
         </li>
       </ul>
     </div>
@@ -52,6 +52,10 @@ export default {
       } else {
         this.inputError = true;
       }
+    },
+    deleteTodo(el) {
+      this.valueList.splice(el, 1)
+      console.log(el)
     }
   },
   mounted() {

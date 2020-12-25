@@ -1,7 +1,7 @@
 <template>
   
       <input 
-        @keyup.enter="addValue" 
+        @keyup.enter="$emit('addTodo')" 
         type="text" id="name" 
         class="border border-gray-200 h-8 px-2 focus:outline-none" 
         :value="modelValue"

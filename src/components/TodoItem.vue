@@ -15,7 +15,7 @@
             </div>
           </div>
           <div :class="{ 'line-through': todo.completed }">{{ todo.title }}</div>
-          <span v-on:click="() => {valueList.splice(index, 1);}" class="px-2  cursor-pointer">
+          <span @click="$emit('deleteTodo')"  class="px-2  cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <line x1="4" y1="7" x2="20" y2="7" />
@@ -33,6 +33,7 @@ export default {
   props: {
     todo: Object
   },
+  emits: ['deleteTodo'],
   data() {
     return {
       
