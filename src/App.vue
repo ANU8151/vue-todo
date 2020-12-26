@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:w-1/2 md:container sm:container mx-auto m-10 p-10 bg-gray-200">
+  <div class="lg:w-1/2 md:container sm:container mx-auto m-10 p-10">
     <div v-if="inputError" class="rounded bg-red-200 text-red-900 font-semibold p-2 text-center ">გთხოვთ შეიყვანოთ სიის ელემენტი</div>
       <div class="flex justify-center items-center">
         <Logo class="mr-4" />
