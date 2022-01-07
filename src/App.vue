@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import TodoItem from "./components/TodoItem.vue";
 import TextInput from "./components/TextInput.vue";
 import Logo from "./components/Logo.vue";

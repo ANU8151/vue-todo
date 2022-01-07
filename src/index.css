@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "HelveticaNeueLTGEO-55Roman";
   src: url("./assets/HelveticaNeueLTGEO-55Roman.woff") format('woff');
