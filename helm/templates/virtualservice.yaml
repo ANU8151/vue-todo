@@ -1,0 +1,17 @@
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: {{ .Release.Name }}-virtualservice
+  namespace: gnizharadze
+spec:
+  hosts:
+    - {{ .Release.Name }}-gnizharadze.apps.osh.devops.tbc
+  gateways:
+    - vue-todo-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: {{ .Release.Name }}-service

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  namespace: gnizharadze
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  replicas: 5
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: 'true'
+      labels:
+        app: {{ .Values.name }}
+        type: ToDoApp
+    spec:
+      containers:
+        - name: {{ .Values.name }}
+          image: nexus.devops.tbc:9443/gnizharadze/vue-todo:3.0.0
+          ports:
+            - containerPort: 80
