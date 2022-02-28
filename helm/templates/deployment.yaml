@@ -10,8 +10,10 @@ spec:
   replicas: 5
   template:
     metadata:
+      {{- with .Values.podAnnotations }}
       annotations:
-        sidecar.istio.io/inject: 'true'
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       labels:
         app: {{ .Values.name }}
         type: ToDoApp
