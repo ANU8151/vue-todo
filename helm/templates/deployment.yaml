@@ -7,7 +7,9 @@ spec:
   selector:
     matchLabels:
       app: {{ .Values.name }}
-  replicas: 5
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
