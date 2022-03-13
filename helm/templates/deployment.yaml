@@ -29,7 +29,7 @@ spec:
             httpGet:
               path: /
               port: 80
-            initialDelaySeconds: 10
+            initialDelaySeconds: 5
             timeoutSeconds: 1
             failureTreshold: 3
             periodSeconds: 5
@@ -37,6 +37,10 @@ spec:
             httpGet:
               path: /
               port: 80
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+            failureTreshold: 3
+            periodSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
 
