@@ -20,13 +20,14 @@ FROM nginx:stable-alpine
 
 ARG USER=default
 RUN adduser -D $USER
-USER $USER
 
 # Set working directory to nginx asset directory
 WORKDIR /usr/share/nginx/html
 
 # Remove default nginx static assets
 RUN rm -rf ./*
+
+USER $USER
 
 # Copy static assets from builder stage
 COPY --from=builder /app/dist .
