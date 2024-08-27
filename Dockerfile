@@ -18,12 +18,9 @@ RUN yarn install && yarn build
 # nginx state for serving content
 FROM nginx:stable-alpine
 
-ARG USERNAME=nginx
-
-# # Create the user
-RUN addgroup -S $USERNAME && adduser -S $USERNAME -G $USERNAME
-    
-USER $USERNAME
+ARG USER=default
+RUN adduser -D $USER
+USER $USER
 
 # Set working directory to nginx asset directory
 WORKDIR /usr/share/nginx/html
