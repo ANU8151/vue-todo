@@ -25,11 +25,18 @@ jobs:
       with:
         username: ${{ vars.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-      
+    
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ vars.IMAGE_NAME }}
+          
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
         platforms: linux/amd64,linux/arm64
+        sbom: true
         push: true
-        tags: anu8151/vue-todo:latest
+        tags: ${{ steps.meta.outputs.tags }}
           
