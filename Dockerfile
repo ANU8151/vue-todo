@@ -21,7 +21,7 @@ FROM nginx:stable-alpine
 ARG USERNAME=nginx
 
 # # Create the user
-RUN groupadd -r $USERNAME && useradd --no-log-init -r -g $USERNAME $USERNAME 
+RUN addgroup -S $USERNAME && adduser -S $USERNAME -G $USERNAME
     
 USER $USERNAME
 
